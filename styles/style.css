@@ -69,7 +69,7 @@ h1 {
 .img-container {
   width: 280px;
   height: 30vh;
-  margin: 2rem auto 1.25rem;
+  margin: 2rem auto 0;
 }
 
 .show {
@@ -81,6 +81,7 @@ h1 {
 }
 
 .movie-select {
+  margin-top: -0.75rem;
   text-align: center;
 }
 
@@ -88,10 +89,6 @@ h1 {
   color: aliceblue;
   font-size: 1rem;
   font-weight: 500;
-}
-
-.movie-select {
-  border: none;
 }
 
 .movie-select select {
@@ -179,7 +176,7 @@ h1 {
 }
 
 .seat.selected {
-  background-color: #1768ac;
+  background-color: #2bd9fe;
 }
 
 .seat.sold {
