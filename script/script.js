@@ -8,6 +8,9 @@ const totalEl = document.getElementById("total");
 const unSelectedSeatsEl = document.querySelectorAll(".seats .seat:not(.sold)");
 
 populateUI();
+// whenever page loaded it matches to respective movie image
+showImage();
+
 // global variables
 let ticketPrize = Number(selectEl.value);
 let seatCount = 0;
@@ -17,7 +20,7 @@ let totalPrize = 0;
 // respective movie image
 function showImage() {
   let movieImage = document.querySelector(".movie-img");
-  ticketPrize = Number(selectEl.value);
+  let ticketPrize = Number(selectEl.value);
   if (ticketPrize === 120) {
     movieImage.src = "./images/Kaithi.avif";
   } else if (ticketPrize === 150) {
@@ -57,7 +60,7 @@ function populateUI() {
 
   if (selectedSeats !== null && selectedSeats.length > 0) {
     unSelectedSeatsEl.forEach((seat, index) => {
-      if (selectedSeats.indexOf(index) > -1) {
+      if (selectedSeats.indexOf(index) >= 0) {
         seat.classList.add("selected");
       }
     });
