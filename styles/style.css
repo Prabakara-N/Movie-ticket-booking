@@ -198,9 +198,10 @@ h1 {
 
 .amount-container p {
   color: aliceblue;
-  text-align: center;
+  text-align: left;
   font-size: 0.9rem;
   margin-bottom: 3rem;
+  /* padding-left: 4px; */
 }
 
 .amount-container p span {
@@ -226,6 +227,7 @@ h1 {
 
   .amount-container p {
     font-size: 1rem;
+    text-align: center;
   }
 
   .amount-container p span {
