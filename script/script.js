@@ -2,33 +2,59 @@
 
 // elements
 const selectEl = document.getElementById("movie-options");
-const screenContainer = document.querySelector(".seat-container");
+const screenContainer = document.querySelectorAll(".seat-container");
 const countEl = document.getElementById("count");
 const totalEl = document.getElementById("total");
 const unSelectedSeatsEl = document.querySelectorAll(".seats .seat:not(.sold)");
-
-populateUI();
-// whenever page loaded it matches to respective movie image
-showImage();
 
 // global variables
 let ticketPrize = Number(selectEl.value);
 let seatCount = 0;
 let totalPrize = 0;
 
+populateUI();
+// whenever page loaded it matches to respective movie image
+showImage();
+
 // functions
 // respective movie image
 function showImage() {
   let movieImage = document.querySelector(".movie-img");
-  let ticketPrize = Number(selectEl.value);
+  let screenNumber = document.querySelector(".screen-no p");
+  ticketPrize = Number(selectEl.value);
+
+  let screenOne = document.getElementById("screen-one");
+  let screenTwo = document.getElementById("screen-two");
+  let screenThree = document.getElementById("screen-three");
+  let screenFour = document.getElementById("screen-four");
+
   if (ticketPrize === 120) {
+    screenOne.classList.add("active");
     movieImage.src = "./images/Kaithi.avif";
-  } else if (ticketPrize === 150) {
+    screenNumber.innerText = "Screen - 1";
+  } else {
+    screenOne.classList.remove("active");
+  }
+  if (ticketPrize === 150) {
+    screenTwo.classList.add("active");
     movieImage.src = "./images/master.jpg";
-  } else if (ticketPrize === 200) {
+    screenNumber.innerText = "Screen - 2";
+  } else {
+    screenTwo.classList.remove("active");
+  }
+  if (ticketPrize === 200) {
+    screenThree.classList.add("active");
     movieImage.src = "./images/vikram.jpg";
-  } else if (ticketPrize === 220) {
+    screenNumber.innerText = "Screen - 3";
+  } else {
+    screenThree.classList.remove("active");
+  }
+  if (ticketPrize === 220) {
+    screenFour.classList.add("active");
     movieImage.src = "./images/leo.jpg";
+    screenNumber.innerText = "Screen - 4";
+  } else {
+    screenFour.classList.remove("active");
   }
 }
 
@@ -78,20 +104,23 @@ function populateUI() {
 selectEl.addEventListener("change", (e) => {
   // calling show image function
   showImage();
+
   ticketPrize = Number(selectEl.value);
   setMovieData(e.target.selectedIndex, e.target.value);
   updatePrize();
 });
 
 // selecting seats
-screenContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("seat")) {
-    if (!e.target.classList.contains("sold")) {
-      e.target.classList.toggle("selected");
-      // calling update count & prize function
-      updatePrize();
+screenContainer.forEach((seats) => {
+  seats.addEventListener("click", (e) => {
+    if (e.target.classList.contains("seat")) {
+      if (!e.target.classList.contains("sold")) {
+        e.target.classList.toggle("selected");
+        // calling update count & prize function
+        updatePrize();
+      }
     }
-  }
+  });
 });
 
 // whenever page loads count & prize will show
