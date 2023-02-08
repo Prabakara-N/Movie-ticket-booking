@@ -64,6 +64,7 @@ h1 {
   text-align: center;
   color: aliceblue;
   font-size: 1.75rem;
+  text-shadow: 3px 3px black;
 }
 
 .img-container {
@@ -158,9 +159,10 @@ h1 {
 }
 
 .seats {
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  justify-content: center;
 }
 
 .seat {
@@ -198,10 +200,9 @@ h1 {
 
 .amount-container p {
   color: aliceblue;
-  text-align: left;
+  text-align: center;
   font-size: 0.9rem;
   margin-bottom: 3rem;
-  /* padding-left: 4px; */
 }
 
 .amount-container p span {
@@ -227,7 +228,6 @@ h1 {
 
   .amount-container p {
     font-size: 1rem;
-    text-align: center;
   }
 
   .amount-container p span {

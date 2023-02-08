@@ -149,6 +149,3 @@ screenContainer.forEach((seats) => {
     }
   });
 });
-
-// whenever page loads count & prize will show
-// updatePrize();
