@@ -139,7 +139,7 @@ h1 {
 
 .screen {
   width: 270px;
-  height: 150px;
+  height: 140px;
   width: 80%;
   margin: 2rem auto 1.5rem;
   background-color: white;
@@ -201,7 +201,7 @@ h1 {
 .amount-container p {
   color: aliceblue;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-bottom: 3rem;
 }
 
